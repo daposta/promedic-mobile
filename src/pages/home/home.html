@@ -1,11 +1,25 @@
-<ion-header color="primary">
+<!-- <ion-header color="primary">
   <ion-navbar>
     <ion-title>PROMedic</ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content padding>
-  <ion-card>
+<ion-content class="home-content" padding>
+  <ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col class="logo">
+      <img src="../../assets/images/promedic.png"/>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  <h2 ion-text text-center color="white">Welcome to PROMEDIC</h2>
+  <p ion-text text-center color="white">Kindly select one of the provided options below</p>
+  
+  <div text-center class="action">
+    <button ion-button round color="brand" (click)="routeToResponderLogin()">I'm a RESPONDER</button>
+    <button ion-button round outline color="white" (click)="routeToClientLogin()">I'm a CLIENT</button>
+  </div>
+<!--   <ion-card>
   	<ion-card-content >
     	<a block (click)="routeToResponderLogin()">I am a RESPONDER</a>
     </ion-card-content>
@@ -16,5 +30,5 @@
 	  	<ion-card-content>
 	    	 <a  (click)="routeToClientLogin()">I am a CLIENT</a>
 	     </ion-card-content>
-  </ion-card>
+  </ion-card> -->
 </ion-content>

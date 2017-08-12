@@ -4,10 +4,31 @@ page-home {
 		color: white;
 		background-color:green;
 	}
+	.scroll-content {
+		padding-top: 80px !important;
+	}
 
 	.client-home{
 		color: white;
 		background-color:blue;
+	}
+	.logo {
+		background-color: white;
+	    padding: 15px;
+	    box-sizing: border-box;
+	    border-radius: 100px;
+	}
+	.home-content {
+		background-image: url('../../assets/images/bg_1.jpg');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.action {
+		padding-top: 100px;
+	}
+	p, button {
+		font-size: 16px;
 	}
 
 }
