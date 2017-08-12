@@ -22,50 +22,42 @@
 	<ion-row class="logo-row">
 		<ion-col></ion-col>
 		    <ion-col width-67>
-		      <img src="assets/images/promedic.png" height="60" width="90" />
+		      <img src="assets/images/promedic.png" />
 		    </ion-col>
 		    <ion-col>
 		</ion-col>
-  </ion-row>
+  	</ion-row>
 
-	<ion-card>
-	  
+	<div class="login-box" padding>
+	  		    <form [formGroup]="responderLoginForm">
+	  		     <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+	  		    	<ion-list inset>
 
-	  <ion-card-content>
-	    <!-- Add card content here! -->
-	    <form [formGroup]="responderLoginForm">
-	     <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
-	    	<ion-list inset>
+	  				  <ion-item>
+	  				    	<ion-label color="primary" stacked>Email</ion-label>
+	  				   		 <ion-input type="text" formControlName="email"></ion-input>
+	  				  </ion-item>
 
-			  <ion-item>
-			    	<ion-label color="primary" stacked>Phone Number</ion-label>
-			   		 <ion-input type="text" formControlName="email"></ion-input>
-			  </ion-item>
+	  				   <ion-item *ngIf="!responderLoginForm.controls.email.valid  && (responderLoginForm.controls.email.dirty || submitAttempt)">
+	  	                <p>Please enter a valid email.</p>
+	  	            </ion-item>
 
-			   <ion-item *ngIf="!responderLoginForm.controls.email.valid  && (responderLoginForm.controls.email.dirty || submitAttempt)">
-                <p>Please enter a valid email.</p>
-            </ion-item>
+	  				  <ion-item>
+	  				    <ion-label color="primary" stacked>Password</ion-label>
+	  				    <ion-input type="password" formControlName="password"></ion-input>
+	  				  </ion-item>
 
-			  <ion-item>
-			    <ion-label color="primary" stacked>Password</ion-label>
-			    <ion-input type="password" formControlName="password"></ion-input>
-			  </ion-item>
+	  				   <ion-item *ngIf="!responderLoginForm.controls.password.valid  && (responderLoginForm.controls.password.dirty )">
+	  	                <p>Please enter a valid password.</p>
+	  	            </ion-item>
 
-			   <ion-item *ngIf="!responderLoginForm.controls.password.valid  && (responderLoginForm.controls.password.dirty )">
-                <p>Please enter a valid password.</p>
-            </ion-item>
-
-			</ion-list>
-			<div padding>
-				  <button ion-button block>Sign In</button>
-			</div>
-	    </form>
-
-	  </ion-card-content>
-
-	  
-
-	</ion-card>
+	  				</ion-list>
+	  				<div padding>
+	  					  <button ion-button block class="submit-btn">Sign In</button>
+	  				</div>
+	  		    </form>
+	</div>
+	
 
 	
 </ion-content>
