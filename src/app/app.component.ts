@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, NavController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { ClientLogin } from '../pages/client-login/client-login';
 import {ClientAuthService} from '../services/clientAuthService';
+import {ClientProfileEdit} from '../pages/client-profile-edit/client-profile-edit'
 
 @Component({
   templateUrl: 'app.html'
@@ -19,7 +20,7 @@ export class MyApp {
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,
-   public authSrv: ClientAuthService) {
+   public authSrv: ClientAuthService, public navCtrl: NavController) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -57,4 +58,10 @@ export class MyApp {
       console.log(err);
     });
   }
+
+  routeToClientProfileEdit(){
+   
+      this.navCtrl.push('ClientProfileEdit');
+
+   };
 }

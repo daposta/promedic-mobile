@@ -23,7 +23,7 @@ export class ResponderLogin {
 
   	
   		 this.responderLoginForm = formBuilder.group(
-        {'email':['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z ]*')])], 
+        {'number':['', Validators.compose([Validators.required, Validators.pattern('[0-9 ]*')])], 
         'password':['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z ]*')])], 
 
 
@@ -41,7 +41,7 @@ export class ResponderLogin {
       alert('valid...');
     }
     else{
-      alert();
+      alert('wrong');
     }
   }
 

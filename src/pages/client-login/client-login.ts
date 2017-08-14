@@ -33,7 +33,7 @@ export class ClientLogin {
     public menu:MenuController ) {
 
       this.clientLoginForm = formBuilder.group(
-        {'email':['', Validators.required], 
+        {'mobile':['', Validators.required], 
         'password':['',Validators.required], 
 
 

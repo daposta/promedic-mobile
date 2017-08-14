@@ -39,16 +39,16 @@
 	    	<ion-list inset>
 
 			  <ion-item>
-			    	<ion-label color="primary" stacked>Email</ion-label>
-			   		 <ion-input type="email" formControlName="email" required ></ion-input>
+			    	<ion-label color="primary" stacked>Mobile No.</ion-label>
+			   		 <ion-input type="number" formControlName="mobile" required ></ion-input>
 
 			  </ion-item>
 
 
 			  
-			<div *ngIf="(clientLoginForm.controls.email.dirty ||clientLoginForm.controls.email.touched) && !clientLoginForm.controls.email.valid">
+			<div *ngIf="(clientLoginForm.controls.mobile.dirty ||clientLoginForm.controls.mobile.touched) && !clientLoginForm.controls.mobile.valid">
 					<!-- <p *ngIf="clientLoginForm.controls['email'].errors.InvalidEmail"> -->
-					<p padding-left >You must enter a valid e-mail address</p>
+					<p padding-left >You must enter a valid phone number</p>
 				<!-- 	</p> -->
 			</div>
         
