@@ -1,7 +1,12 @@
 page-responder-login {
 	ion-content {
-		background-color: mediumslateblue;
+		background-color: mediumslateblue !important;
 	}
+  .logo {
+    padding: 15px;
+    border-radius: 100px;
+    background: white;
+  }
 	.login-box {
       background: #5ca5dd;
       margin-top: 30px;
