@@ -7,9 +7,10 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { ClientLogin } from '../pages/client-login/client-login';
 import {ClientAuthService} from '../services/clientAuthService';
+import { ClientProfileEdit } from '../pages/client-profile-edit/client-profile-edit';
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
@@ -56,5 +57,9 @@ export class MyApp {
     .catch(err =>{
       console.log(err);
     });
+  }
+
+ClientProfileEdit() {
+    this.nav.setRoot(ClientProfileEdit);
   }
 }
