@@ -17,15 +17,15 @@ export class ClientProfileEdit {
   pages: Array<{title: string, component: any}>;
   constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController) {
 
-  	this.pages = [
-      { title: 'Logout', component: ClientLogin },
-      // { title: 'List', component: ListPage }
-    ];
   	
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ClientProfileEdit');
+  }
+
+  saveProfile(){
+    
   }
 
 }

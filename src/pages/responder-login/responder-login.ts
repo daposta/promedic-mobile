@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController ,
+MenuController} from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ResponderRegister } from   '../client-register/responder-register';
 /**
@@ -34,16 +35,28 @@ export class ResponderLogin {
     console.log('ionViewDidLoad ResponderLogin');
   }
 
-  loginResponder(){
- 
-    this.submit = true;
-    if(this.responderLoginForm.valid){
-      alert('valid...');
+  loginResponder(data){
+    this.isSubmitted = true;
+     if(this.responderLoginForm.valid){
+     
+      this.authSrv.login(data).then((response)=>{
+         this.responder = response;
+         if( this.client){
+              localStorage.setItem('token',  this.responder['token']);
+              this.navCtrl.push('ResponderProfile')
+         }
+        
+      }, (err) =>{
+           this.error_msg = JSON.parse(err['_body']).non_field_errors[0];
+         
+      });
+
+     
+     
     }
-    else{
-      alert();
-    }
-  }
+   
+  };
+
 
  
 
