@@ -5,93 +5,63 @@
   Ionic pages and navigation.
 -->
 <ion-header >
-  <ion-navbar color="primary"  [hideBackButton]="true">
-  	 <ion-buttons start>
-      <button ion-button icon-only>
-        <ion-icon name="contact"></ion-icon>
-      </button>
-    </ion-buttons>
+	<ion-navbar color="primary"  [hideBackButton]="true">
+		<ion-buttons start>
+			<button ion-button icon-only>
+				<ion-icon name="contact"></ion-icon>
+			</button>
+		</ion-buttons>
     
-    <button ion-button menuToggle="left" start>
-      <ion-icon name="menu" ></ion-icon>
-    </button>
-    <ion-title>PROMedic - Your Profile</ion-title>
-  </ion-navbar>
+		<button ion-button menuToggle="left" start>
+			<ion-icon name="menu" ></ion-icon>
+		</button>
+		
+    	<ion-title>PROMedic - Your Profile</ion-title>
+  	</ion-navbar>
 </ion-header>
 
 
+
 <ion-content padding>
-
-		
-		<ion-list >
-		    <ion-item>
-		     
-		      <h2>First Name:</h2> {{profile?.first_name}}
-		    </ion-item>
-		     <ion-item>
-		     
-		      <h2>Middle Name:</h2> {{profile?.middle_name}}
-		    </ion-item>
-		     
-		     <ion-item>
-		     
-		      <h2>Last Name:</h2> {{profile?.last_name}}
-		    </ion-item>
-
-		     <ion-item>
-		     
-		      <h2>Nickname:</h2> {{profile?.nick_name}}
-		    </ion-item>
-
-		     <ion-item>
-		     
-		      <h2> Age:</h2> X
-		    </ion-item>
-
-		      <ion-item>
-		     
-		      <h2>Gender:</h2>{{profile?.gender.name}}
-		    </ion-item>
-
-
-		     <ion-item>
-		     
-		      <h2>Genotype:</h2>{{profile?.genotype.name}}
-		    </ion-item>
-
-
-		     <ion-item>
-		     
-		      <h2>Blood Group:</h2>{{profile?.blood_group.name}}
-		    </ion-item>
-
-		    <ion-item>
-		     
-		      <h2>NHIS No.:</h2>{{profile?.nhis_number}}
-		    </ion-item>
-
-		     
-	   
-	  </ion-list>
-
-	  <ion-list>
-
-	   <ion-item>
-		     
-		      <h2>Contact Name:</h2> {{profile?.emergency_name}}
-		    </ion-item>
-
-		      <ion-item>
-		     
-		      <h2>Emergency Number:</h2> {{profile?.emergency_number}}
-		    </ion-item>
-
-	  </ion-list>
-
-	 
-
-	 
-
+	<h2 ion-text text-center>Personal Information <ion-icon name="ios-information-circle-outline"></ion-icon></h2>	
+	<ion-list >
+		<ion-item>
+			<p>First Name:</p> {{profile?.first_name}}
+		</ion-item>
+		<ion-item>
+			<p>Middle Name:</p> {{profile?.middle_name}}
+		</ion-item>
+		<ion-item>
+			<p>Last Name:</p> {{profile?.last_name}}
+		</ion-item>
+		<ion-item>
+			<p>Nickname:</p> {{profile?.nick_name}}
+		</ion-item>
+		<ion-item>
+			<p> Age:</p> X
+		</ion-item>
+		<ion-item>
+			<p>Gender:</p> {{profile?.gender.name}}
+		</ion-item>
+		<ion-item>
+			<p>Genotype:</p> {{profile?.genotype.name}}
+		</ion-item>
+		<ion-item>
+			<p>Blood Group:</p> {{profile?.blood_group.name}}
+		</ion-item>
+		<ion-item>
+			<p>NHIS No.:</p> {{profile?.nhis_number}}
+		</ion-item>
+	</ion-list>
+	<h2 ion-text text-center>Emergency Details <ion-icon name="ios-contacts-outline"></ion-icon></h2>
+	<ion-list>
+		<ion-item>
+			<p>Contact Name:</p> {{profile?.emergency_name}}
+		</ion-item>
+		<ion-item>
+			<p>Emergency Number:</p> {{profile?.emergency_number}}
+		</ion-item>
+	</ion-list>
 </ion-content>
 
 

@@ -5,6 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { ClientProfileEdit } from '../pages/client-profile-edit/client-profile-edit';
 
 import { HttpModule } from '@angular/http'; 
 import {Globals} from '../shared/api';
@@ -22,6 +23,7 @@ import { Printer, PrintOptions } from '@ionic-native/printer';
     MyApp,
     HomePage,
     ListPage,
+    ClientProfileEdit
    
   ],
   imports: [

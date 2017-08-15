@@ -21,7 +21,7 @@
     </ion-row> -->
 	<ion-row class="logo-row">
 		<ion-col></ion-col>
-		    <ion-col width-67>
+		    <ion-col width-67 class="logo">
 		      <img src="assets/images/promedic.png" />
 		    </ion-col>
 		    <ion-col>
@@ -29,22 +29,23 @@
   	</ion-row>
 
 	<div class="login-box" padding>
-	  		    <form [formGroup]="responderLoginForm">
+	  		    <form [formGroup]="responderLoginForm" (ngSubmit)="responderLoginForm.valid && loginResponder(clientLoginForm.value)" novalidate> 
 	  		     <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
 	  		    	<ion-list inset>
 
 	  				  <ion-item>
-	  				    	<ion-label color="primary" stacked>Mobile No.</ion-label>
-	  				   		 <ion-input type="text" formControlName="email"></ion-input>
+
+	  				    	<ion-label color="primary" stacked>Mobile no.</ion-label>
+	  				   		 <ion-input type="number" formControlName="mobile" required></ion-input>
 	  				  </ion-item>
 
-	  				   <ion-item *ngIf="!responderLoginForm.controls.email.valid  && (responderLoginForm.controls.email.dirty || submitAttempt)">
+	  				   <ion-item *ngIf="!responderLoginForm.controls.mobile.valid  && (responderLoginForm.controls.mobile.dirty || submitAttempt)">
 	  	                <p>Please enter a valid mobile number.</p>
 	  	            </ion-item>
 
 	  				  <ion-item>
 	  				    <ion-label color="primary" stacked>Password</ion-label>
-	  				    <ion-input type="password" formControlName="password"></ion-input>
+	  				    <ion-input type="password" formControlName="password" required></ion-input>
 	  				  </ion-item>
 
 	  				   <ion-item *ngIf="!responderLoginForm.controls.password.valid  && (responderLoginForm.controls.password.dirty )">

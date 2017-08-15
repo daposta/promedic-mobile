@@ -1,5 +1,7 @@
 {
-  "name": "toast",
+  "name": "promedic",
   "app_id": "",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "typescript": true,
+	"v2": true
 }

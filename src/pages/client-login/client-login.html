@@ -21,22 +21,35 @@
     </ion-row> -->
 	<ion-row class="logo-row">
 		<ion-col></ion-col>
-		    <ion-col width-67>
-		      <img src="assets/images/promedic.png" height="60" width="90" />
+		    <ion-col width-67 class="logo">
+		      <img src="assets/images/promedic.png" />
 		    </ion-col>
 		    <ion-col>
 		</ion-col>
-  </ion-row>
+  	</ion-row>
 
-	<ion-card>
-	  
+	<div class="login-box" padding>
+		<form [formGroup]="clientLoginForm" (ngSubmit)="clientLoginForm.valid && loginClient(clientLoginForm.value)" novalidate>
+			<p *ngIf="isSubmitted" style="color: #ea6153;">{{error_msg}}</p>
+			<ion-list inset>
 
-	  <ion-card-content>
-	    <!-- Add card content here! -->
-	    <form [formGroup]="clientLoginForm" (ngSubmit)="clientLoginForm.valid && loginClient(clientLoginForm.value)" novalidate>
+				<ion-item>
+						<ion-label color="primary" stacked>Mobile No.</ion-label>
+						<ion-input type="number" formControlName="mobile" required ></ion-input>
 
-	     <p *ngIf="isSubmitted" style="color: #ea6153;">{{error_msg}}</p>
-	    	<ion-list inset>
+				</ion-item>
+
+
+				<div *ngIf="(clientLoginForm.controls.mobile.dirty ||clientLoginForm.controls.mobile.touched) && !clientLoginForm.controls.mobile.valid">
+						<!-- <p *ngIf="clientLoginForm.controls['email'].errors.InvalidEmail"> -->
+						<p padding-left style="color: white;">You must enter a valid phone number</p>
+					<!-- 	</p> -->
+				</div>
+
+				<ion-item>
+					<ion-label color="primary" stacked>Password</ion-label>
+					<ion-input type="password" formControlName="password"></ion-input>
+				</ion-item>
 
 			  <ion-item>
 			    	<ion-label color="primary" stacked>Email</ion-label>
@@ -62,22 +75,23 @@
                 <p class padding-left >Please enter a valid password.</p>
             </ion-item>
 
+
+				<div *ngIf="!clientLoginForm.controls.password.valid  && (clientLoginForm.controls.password.dirty || clientLoginForm.controls.password.touched)">
+						<p class padding-left style="color: white;">Please enter a valid password.</p>
+				</div>
 			</ion-list>
+
 			<div padding>
-				  <button ion-button block type="submit"> 
-				  <ion-icon name="log-in"></ion-icon>Sign In</button>
+				<button ion-button block type="submit"> 
+				<ion-icon name="log-in"></ion-icon>Sign In</button>
 			</div>
-	    </form>
+		</form>
 
-	    <div center text-center>
-	    	<a block (click)="openRegisterClientForm()"> Join us!</a>
-	    </div>
-	   
-	  </ion-card-content>
-
-	  
-
-	</ion-card>
+					<div center text-center>
+						<a block style="color: white;" (click)="openRegisterClientForm()"> Join us!</a>
+					</div>
+	</div>
+	
 
 	
 </ion-content>

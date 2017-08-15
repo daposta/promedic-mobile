@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, ToastController ,
-MenuController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController, MenuController, AlertController} from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {ClientAuthService} from '../../services/clientAuthService';
 import { ResponderRegister } from   '../client-register/responder-register';
 /**
  * Generated class for the ResponderLogin page.
@@ -13,18 +13,24 @@ import { ResponderRegister } from   '../client-register/responder-register';
 @Component({
   selector: 'page-responder-login',
   templateUrl: 'responder-login.html',
+   providers: [ClientAuthService]
 })
 export class ResponderLogin {
 
+  isSubmitted: boolean = false;
+  responder:Object;
+  error_msg ='Kindly fill the fields below';
 
   responderLoginForm: FormGroup;
   submit: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController,
+    public formBuilder: FormBuilder, public authSrv: ClientAuthService, public toastCtrl: ToastController,
+    public menu:MenuController, private alertCtrl: AlertController) {
 
   	
   		 this.responderLoginForm = formBuilder.group(
-        {'email':['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z ]*')])], 
+        {'number':['', Validators.compose([Validators.required, Validators.pattern('[0-9 ]*')])], 
         'password':['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z ]*')])], 
 
 
@@ -35,13 +41,14 @@ export class ResponderLogin {
     console.log('ionViewDidLoad ResponderLogin');
   }
 
+
   loginResponder(data){
     this.isSubmitted = true;
      if(this.responderLoginForm.valid){
      
       this.authSrv.login(data).then((response)=>{
          this.responder = response;
-         if( this.client){
+         if( this.responder){
               localStorage.setItem('token',  this.responder['token']);
               this.navCtrl.push('ResponderProfile')
          }
@@ -51,11 +58,10 @@ export class ResponderLogin {
          
       });
 
-     
-     
+     }
     }
-   
-  };
+     
+
 
 
  
