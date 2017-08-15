@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, ToastController ,
-MenuController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController, MenuController, AlertController} from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {ClientAuthService} from '../../services/clientAuthService';
 import { ClientRegister } from   '../client-register/client-register';
@@ -24,13 +23,13 @@ export class ClientLogin {
   clientLoginForm: FormGroup;
   isSubmitted: boolean = false;
   client:Object;
-  error_msg ='';
+  error_msg ='Kindly fill the fields below';
   client_email = '';
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController,
     public formBuilder: FormBuilder, public authSrv: ClientAuthService, public toastCtrl: ToastController,
-    public menu:MenuController ) {
+    public menu:MenuController, private alertCtrl: AlertController ) {
 
       this.clientLoginForm = formBuilder.group(
         {'mobile':['', Validators.required], 
@@ -57,7 +56,14 @@ export class ClientLogin {
   ionViewDidLeave(){
     this.menu.enable(true);
   }
-
+  presentAlert() {
+  let alert = this.alertCtrl.create({
+    title: 'Low battery',
+    subTitle: '10% of battery remaining',
+    buttons: ['Dismiss']
+  });
+  alert.present();
+}
 
   presentLoading() {
     let loader = this.loadingCtrl.create({
