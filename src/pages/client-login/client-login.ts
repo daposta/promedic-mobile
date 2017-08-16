@@ -73,27 +73,33 @@ export class ClientLogin {
          this.client = response;
          if( this.client){
               localStorage.setItem('token',  this.client['token']);
-              let alert = this.alertCtrl.create({
-            title: 'Login successful',
-            buttons: [{
-              text: 'Ok'
-            }]
-          });
+              let toast = this.toastCtrl.create({
+              message: 'Log in successful',
+              duration: 3000,
+              position: 'top'
+            });
 
-          alert.present();
+            toast.onDidDismiss(() => {
+              console.log('Dismissed toast');
+            });
+
+            toast.present();
               this.navCtrl.push('ClientProfile')
          }
         
       }, (err) =>{
            this.error_msg = JSON.parse(err['_body']).non_field_errors[0];
-           let alert = this.alertCtrl.create({
-            title: 'Login error',
-            buttons: [{
-              text: 'Ok'
-            }]
-          });
+            let toast = this.toastCtrl.create({
+              message: 'Log in error',
+              duration: 3000,
+              position: 'top'
+            });
 
-          alert.present();
+            toast.onDidDismiss(() => {
+              console.log('Dismissed toast');
+            });
+
+            toast.present();
       });
 
      
