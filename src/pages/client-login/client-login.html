@@ -19,18 +19,20 @@
         <img [@flyInBottomSlow]="logoState" src="assets/images/joshuamorony.png" />
       </ion-col>
     </ion-row> -->
-	<ion-row class="logo-row">
+	<!--<ion-row class="logo-row">
 		<ion-col></ion-col>
 		    <ion-col width-67 class="logo">
 		      <img src="assets/images/promedic.png" />
 		    </ion-col>
 		    <ion-col>
 		</ion-col>
-  	</ion-row>
+  	</ion-row>-->
 
 	<div class="login-box" padding>
 		<form [formGroup]="clientLoginForm" (ngSubmit)="clientLoginForm.valid && loginClient(clientLoginForm.value)" novalidate>
-			<p *ngIf="isSubmitted" style="color: #ea6153;">{{error_msg}}</p>
+			<h2 text-center style="color: #025973">LOGIN TO YOUR ACCOUNT</h2>
+			<p text-center style="color: #025973">Fill the fields below with your client details</p>
+			<p *ngIf="isSubmitted" style="color: #025973;">{{error_msg}}</p>
 			<ion-list inset>
 
 				<ion-item>
@@ -40,11 +42,11 @@
 				</ion-item>
 
 
-				<div *ngIf="(clientLoginForm.controls.mobile.dirty ||clientLoginForm.controls.mobile.touched) && !clientLoginForm.controls.mobile.valid">
+				<ion-item *ngIf="(clientLoginForm.controls.mobile.dirty ||clientLoginForm.controls.mobile.touched) && !clientLoginForm.controls.mobile.valid">
 						<!-- <p *ngIf="clientLoginForm.controls['email'].errors.InvalidEmail"> -->
-						<p padding-left style="color: white;">You must enter a valid phone number</p>
+						<p padding-left style="color: #025973;">You must enter a valid phone number</p>
 					<!-- 	</p> -->
-				</div>
+				</ion-item>
 
 			  <ion-item>
 			    <ion-label color="primary" stacked>Password</ion-label>
@@ -52,7 +54,7 @@
 			  </ion-item>
 
 			   <ion-item *ngIf="!clientLoginForm.controls.password.valid  && (clientLoginForm.controls.password.dirty || clientLoginForm.controls.password.touched)">
-                <p class padding-left >Please enter a valid password.</p>
+                <p class padding-left style="color: #025973;">Please enter a valid password.</p>
             </ion-item>
 			</ion-list>
 
@@ -63,7 +65,7 @@
 		</form>
 
 					<div center text-center>
-						<a block style="color: white;" (click)="openRegisterClientForm()"> Join us!</a>
+						<span style="color: #025973;">Don't have an account?<a block (click)="openRegisterClientForm()"> Join us!</a></span>
 					</div>
 	</div>
 	
