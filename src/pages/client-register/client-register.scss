@@ -1,9 +1,6 @@
 page-client-register {
     ion-content {
-        background-image: url('../../assets/images/bg_1.jpg');
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
+        background-color: #025973 !important;
     }
     h2 {
         margin-top: 50px !important;
@@ -13,5 +10,10 @@ page-client-register {
     }
     .item-inner {
         padding-left: 15px;
+    }
+    .reg-btn {
+        color: #025973;
+        background: white;
+        border: 2px solid #025973;
     }
 }
