@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { ClientLogin } from   '../client-login/client-login';
+import { ClientProfileEdit } from   '../client-profile-edit/client-profile-edit';
 import {ClientAuthService} from '../../services/clientAuthService';
+import { MyApp } from './app.component';
 /**
  * Generated class for the ClientProfile page.
  *
