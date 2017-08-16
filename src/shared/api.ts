@@ -17,6 +17,10 @@ export class Globals{
     CURRENT_PROFILE_URL = this.HOST_URL + '/client/api/current_profile/'; //current_profile
     PROFILE_DETAIL_URL = this.HOST_URL + '/client/api/profile_detail/';
 
+    RESPONDER_LOGIN_URL =  this.HOST_URL + '/responder/api/api-token-auth/';
+    RESPONDER_PROFILE_URL = this.HOST_URL + '/responder/api/current_profile/';
+    RESPONDER_LOGOUT_URL =  this.HOST_URL + '/responder/api/logout/';
+
 
     constructor(){}
 
