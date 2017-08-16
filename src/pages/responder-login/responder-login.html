@@ -35,11 +35,11 @@
 
 	  				  <ion-item>
 	  				    	<ion-label color="primary" stacked>Mobile no.</ion-label>
-	  				   		 <ion-input type="text" formControlName="email"></ion-input>
+	  				   		 <ion-input type="number" formControlName="mobile"></ion-input>
 	  				  </ion-item>
 
-	  				   <ion-item *ngIf="!responderLoginForm.controls.email.valid  && (responderLoginForm.controls.email.dirty || submitAttempt)">
-	  	                <p>Please enter a valid email.</p>
+	  				   <ion-item *ngIf="!responderLoginForm.controls.mobile.valid  && (responderLoginForm.controls.mobile.dirty || submitAttempt)">
+	  	                <p>Please enter a valid number.</p>
 	  	            </ion-item>
 
 	  				  <ion-item>

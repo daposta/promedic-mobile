@@ -1,6 +1,9 @@
 page-client-register {
     ion-content {
-        background: mediumslateblue !important;
+        background-image: url('../../assets/images/bg_1.jpg');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
         margin-top: 50px !important;
     }
     ion-item {

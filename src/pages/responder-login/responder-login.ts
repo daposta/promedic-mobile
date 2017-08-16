@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ResponderRegister } from   '../client-register/responder-register';
 /**
@@ -19,11 +19,11 @@ export class ResponderLogin {
   responderLoginForm: FormGroup;
   submit: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder, private alertCtrl: AlertController) {
 
   	
   		 this.responderLoginForm = formBuilder.group(
-        {'number':['', Validators.compose([Validators.required, Validators.pattern('[0-9 ]*')])], 
+        {'mobile':['', Validators.compose([Validators.required, Validators.pattern('[0-9 ]*')])], 
         'password':['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z ]*')])], 
 
 
@@ -41,7 +41,7 @@ export class ResponderLogin {
       alert('valid...');
     }
     else{
-      alert('wrong');
+      console.log('error login');
     }
   }
 

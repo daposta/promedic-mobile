@@ -56,14 +56,6 @@ export class ClientLogin {
   ionViewDidLeave(){
     this.menu.enable(true);
   }
-  presentAlert() {
-  let alert = this.alertCtrl.create({
-    title: 'Low battery',
-    subTitle: '10% of battery remaining',
-    buttons: ['Dismiss']
-  });
-  alert.present();
-}
 
   presentLoading() {
     let loader = this.loadingCtrl.create({
@@ -76,6 +68,15 @@ export class ClientLogin {
   loginClient(data){
     this.isSubmitted = true;
      if(this.clientLoginForm.valid){
+
+       let alert = this.alertCtrl.create({
+  title: 'Hello',
+  buttons: [{
+    text: 'Ok'
+  }]
+});
+
+alert.present();
      
       this.authSrv.login(data).then((response)=>{
          this.client = response;
