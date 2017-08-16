@@ -46,26 +46,6 @@
 					<!-- 	</p> -->
 				</div>
 
-				<ion-item>
-					<ion-label color="primary" stacked>Password</ion-label>
-					<ion-input type="password" formControlName="password"></ion-input>
-				</ion-item>
-
-			  <ion-item>
-			    	<ion-label color="primary" stacked>Email</ion-label>
-			   		 <ion-input type="email" formControlName="mobile" required ></ion-input>
-
-			  </ion-item>
-
-
-			  
-			<div *ngIf="(clientLoginForm.controls.mobile.dirty ||clientLoginForm.controls.mobile.touched) && !clientLoginForm.controls.email.valid">
-					<!-- <p *ngIf="clientLoginForm.controls['email'].errors.InvalidEmail"> -->
-					<p padding-left >You must enter a valid phone number</p>
-				<!-- 	</p> -->
-			</div>
-        
-
 			  <ion-item>
 			    <ion-label color="primary" stacked>Password</ion-label>
 			    <ion-input type="password" formControlName="password"></ion-input>
@@ -74,11 +54,6 @@
 			   <ion-item *ngIf="!clientLoginForm.controls.password.valid  && (clientLoginForm.controls.password.dirty || clientLoginForm.controls.password.touched)">
                 <p class padding-left >Please enter a valid password.</p>
             </ion-item>
-
-
-				<div *ngIf="!clientLoginForm.controls.password.valid  && (clientLoginForm.controls.password.dirty || clientLoginForm.controls.password.touched)">
-						<p class padding-left style="color: white;">Please enter a valid password.</p>
-				</div>
 			</ion-list>
 
 			<div padding>
