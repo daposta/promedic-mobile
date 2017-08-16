@@ -101,13 +101,6 @@ export class ClientLogin {
     }
    
   };
-
-  LoginAlert() {
-    this.isSubmitted = true;
-    if(this.clientLoginForm.invalid){
-      
-  }
-  }
   
 
   openRegisterClientForm(){
