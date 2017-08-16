@@ -68,26 +68,32 @@ export class ClientLogin {
   loginClient(data){
     this.isSubmitted = true;
      if(this.clientLoginForm.valid){
-
-       let alert = this.alertCtrl.create({
-  title: 'Hello',
-  buttons: [{
-    text: 'Ok'
-  }]
-});
-
-alert.present();
      
       this.authSrv.login(data).then((response)=>{
          this.client = response;
          if( this.client){
               localStorage.setItem('token',  this.client['token']);
+              let alert = this.alertCtrl.create({
+            title: 'Login successful',
+            buttons: [{
+              text: 'Ok'
+            }]
+          });
+
+          alert.present();
               this.navCtrl.push('ClientProfile')
          }
         
       }, (err) =>{
            this.error_msg = JSON.parse(err['_body']).non_field_errors[0];
-         
+           let alert = this.alertCtrl.create({
+            title: 'Login error',
+            buttons: [{
+              text: 'Ok'
+            }]
+          });
+
+          alert.present();
       });
 
      
@@ -95,6 +101,14 @@ alert.present();
     }
    
   };
+
+  LoginAlert() {
+    this.isSubmitted = true;
+    if(this.clientLoginForm.invalid){
+      
+  }
+  }
+  
 
   openRegisterClientForm(){
      this.navCtrl.push('ClientRegister');
