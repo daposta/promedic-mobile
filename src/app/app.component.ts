@@ -10,6 +10,7 @@ import {ClientAuthService} from '../services/clientAuthService';
 // import { ClientProfileEdit } from '../pages/client-profile-edit/client-profile-edit';
 
 @Component({
+  selector: 'nav-menu',
   templateUrl: 'app.html',
 })
 export class MyApp {
