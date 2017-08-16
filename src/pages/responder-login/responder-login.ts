@@ -44,21 +44,23 @@ export class ResponderLogin {
 
   loginResponder(data){
     this.isSubmitted = true;
-     if(this.responderLoginForm.valid){
-     
-      this.authSrv.login(data).then((response)=>{
-         this.responder = response;
-         if( this.responder){
-              localStorage.setItem('token',  this.responder['token']);
-              this.navCtrl.push('ResponderProfile')
-         }
-        
-      }, (err) =>{
-           this.error_msg = JSON.parse(err['_body']).non_field_errors[0];
-         
-      });
+     // if(this.responderLoginForm.valid){
 
-     }
+     //   alert();
+     
+     //  this.authSrv.login(data).then((response)=>{
+     //     this.responder = response;
+     //     if( this.responder){
+     //          localStorage.setItem('token',  this.responder['token']);
+     //          this.navCtrl.push('ResponderProfile')
+     //     }
+        
+     //  }, (err) =>{
+     //       this.error_msg = JSON.parse(err['_body']).non_field_errors[0];
+         
+     //  });
+
+     // }
     }
      
 

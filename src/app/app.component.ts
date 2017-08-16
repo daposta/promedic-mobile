@@ -4,10 +4,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+// import { ListPage } from '../pages/list/list';
 import { ClientLogin } from '../pages/client-login/client-login';
 import {ClientAuthService} from '../services/clientAuthService';
-import { ClientProfileEdit } from '../pages/client-profile-edit/client-profile-edit';
+// import { ClientProfileEdit } from '../pages/client-profile-edit/client-profile-edit';
 
 @Component({
   templateUrl: 'app.html',
@@ -59,7 +59,7 @@ export class MyApp {
     });
   }
 
-ClientProfileEdit() {
-    this.nav.setRoot(ClientProfileEdit);
-  }
+// ClientProfileEdit() {
+//     this.nav.setRoot(ClientProfileEdit);
+//   }
 }
