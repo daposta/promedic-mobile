@@ -11,7 +11,7 @@ import { ClientProfileEdit } from '../pages/client-profile-edit/client-profile-e
 
 @Component({
   selector: 'nav-menu',
-  templateUrl: 'app.html',
+  templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;

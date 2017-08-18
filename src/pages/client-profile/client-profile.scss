@@ -1,5 +1,36 @@
 page-client-profile {
 	.item-inner {
-		border-bottom: 1px solid #011b33 !important;
+		border-bottom: 1px solid #ebebf2 !important;
+	}
+	.img-header {
+		background-image: -webkit-linear-gradient(#4cd5f3, #25aae1);
+		background-image: -moz-linear-gradient(#4cd5f3, #25aae1);
+		background-image: -o-linear-gradient(#4cd5f3, #25aae1);
+		background-image: linear-gradient(#4cd5f3, #25aae1);
+		height: 120px;
+	}
+	.pos-rel {
+		position: relative;
+		margin-bottom: 70px;
+	}
+	img {
+		border: 3px solid white;
+    	border-radius: 100px;
+		position: absolute;
+		width: 30%;
+		top: 60px;
+		background: white;
+    	left: 130px;
+	}
+	.section-title {
+		color: #26aae1;
+		font-size: 16px;
+		text-transform: uppercase;
+	}
+	ion-list {
+		border: solid 1px #ebebf2 !important;
+	}
+	.text-right {
+		float: right;
 	}
 }

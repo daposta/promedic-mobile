@@ -6,12 +6,18 @@
   </ion-header>
 
   <ion-content>
+    <div style="background-image: linear-gradient(to bottom, #4cd5f3, #25aae1);">
+      <div text-center style="width: 45%; padding: 54px 24px;">
+        <img style="border-radius: 100px; background: white; padding: 10px;" src="assets/images/promedic.png" />
+      </div>
+    </div>
+    
     <ion-list>
       <!-- <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button> -->
-      <button ion-item (click)="ClientProfileEdit()">Edit Profile</button>
-      <button ion-item (click)="logoutClient()">Logout</button>
+      <button style="font-size: 16px;" ion-item (click)="ClientProfileEdit()"><ion-icon name="create" style="color: #26aae1; padding-right: 35px;"></ion-icon>Edit Profile</button>
+      <button style="font-size: 16px;" ion-item (click)="logoutClient()"><ion-icon name="md-exit" style="color: #26aae1; padding-right: 35px;"></ion-icon>Logout</button>
 
     </ion-list>
   </ion-content>
@@ -19,4 +25,4 @@
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus-->
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav> 
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

@@ -23,7 +23,7 @@ import { Printer, PrintOptions } from '@ionic-native/printer';
     MyApp,
     HomePage,
     ListPage,
-    ClientProfileEdit
+    ClientProfileEdit,
    
   ],
   imports: [

@@ -30,12 +30,11 @@
 
 	<div class="login-box" padding>
 		<form [formGroup]="clientLoginForm" (ngSubmit)="clientLoginForm.valid && loginClient(clientLoginForm.value)" novalidate>
-			<p text-center style="color: #025973">Fill the fields below with your client details</p>
-			<p *ngIf="isSubmitted" style="color: #025973;">{{error_msg}}</p>
+			<p text-center *ngIf="isSubmitted" style="color: white;">{{error_msg}}</p>
 			<ion-list inset>
 
 				<ion-item>
-						<ion-label color="primary" stacked>Mobile No.</ion-label>
+						<ion-label color="primary" stacked><ion-icon style="color: white;" name="phone-portrait"></ion-icon>Phone Number</ion-label>
 						<ion-input type="number" formControlName="mobile" required ></ion-input>
 
 				</ion-item>
@@ -43,28 +42,27 @@
 
 				<ion-item *ngIf="(clientLoginForm.controls.mobile.dirty ||clientLoginForm.controls.mobile.touched) && !clientLoginForm.controls.mobile.valid">
 						<!-- <p *ngIf="clientLoginForm.controls['email'].errors.InvalidEmail"> -->
-						<p padding-left style="color: #025973;">You must enter a valid phone number</p>
+						<p padding-left style="color: white;">You must enter a valid phone number</p>
 					<!-- 	</p> -->
 				</ion-item>
 
 			  <ion-item>
-			    <ion-label color="primary" stacked>Password</ion-label>
+			    <ion-label color="primary" stacked><ion-icon style="color: white;" name="ios-lock"></ion-icon>Password</ion-label>
 			    <ion-input type="password" formControlName="password"></ion-input>
 			  </ion-item>
 
 			   <ion-item *ngIf="!clientLoginForm.controls.password.valid  && (clientLoginForm.controls.password.dirty || clientLoginForm.controls.password.touched)">
-                <p class padding-left style="color: #025973;">Please enter a valid password.</p>
+                <p class padding-left style="color: white;">Please enter a valid password.</p>
             </ion-item>
 			</ion-list>
 
 			<div padding>
-				<button ion-button block type="submit" class="loginbtn"> 
-				<ion-icon name="log-in"></ion-icon>Sign In</button>
+				<button ion-button block type="submit" class="loginbtn"><ion-icon name="log-in"></ion-icon> Sign In</button>
 			</div>
 		</form>
 
 					<div center text-center>
-						<span style="color: #025973;">Don't have an account?<a block (click)="openRegisterClientForm()"> Join us!</a></span>
+						<a style="color: white;" block (click)="openRegisterClientForm()" colors="text"> Join us!</a>
 					</div>
 	</div>
 	
