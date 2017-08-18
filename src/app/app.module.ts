@@ -24,6 +24,7 @@ import { Printer, PrintOptions } from '@ionic-native/printer';
     HomePage,
     ListPage,
     ClientProfileEdit,
+
    
   ],
   imports: [
