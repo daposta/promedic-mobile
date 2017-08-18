@@ -22,46 +22,53 @@
 
 
 
-<ion-content padding>
-	<h2 ion-text text-center>Personal Information <ion-icon name="ios-information-circle-outline"></ion-icon></h2>	
-	<ion-list >
-		<ion-item>
-			<p>First Name:</p> {{profile?.first_name}}
-		</ion-item>
-		<ion-item>
-			<p>Middle Name:</p> {{profile?.middle_name}}
-		</ion-item>
-		<ion-item>
-			<p>Last Name:</p> {{profile?.last_name}}
-		</ion-item>
-		<ion-item>
-			<p>Nickname:</p> {{profile?.nick_name}}
-		</ion-item>
-		<ion-item>
-			<p> Age:</p> X
-		</ion-item>
-		<ion-item>
-			<p>Gender:</p> {{profile?.gender.name}}
-		</ion-item>
-		<ion-item>
-			<p>Genotype:</p> {{profile?.genotype.name}}
-		</ion-item>
-		<ion-item>
-			<p>Blood Group:</p> {{profile?.blood_group.name}}
-		</ion-item>
-		<ion-item>
-			<p>NHIS No.:</p> {{profile?.nhis_number}}
-		</ion-item>
-	</ion-list>
-	<h2 ion-text text-center>Emergency Details <ion-icon name="ios-contacts-outline"></ion-icon></h2>
+<ion-content>
+	<div class="pos-rel">
+		<div class="img-header"></div>
+		<div text-center class="logo"><img src="assets/images/promedic.png" /></div>
+		
+	</div>
+	<div padding>
+	<p class="section-title" ion-text>Personal Information</p>	
 	<ion-list>
 		<ion-item>
-			<p>Contact Name:</p> {{profile?.emergency_name}}
+			<p>First Name:<span class="text-right">{{profile?.first_name}}</span></p>
 		</ion-item>
 		<ion-item>
-			<p>Emergency Number:</p> {{profile?.emergency_number}}
+			<p>Middle Name:<span class="text-right">{{profile?.middle_name}}</span></p>
+		</ion-item>
+		<ion-item>
+			<p>Last Name:<span class="text-right">{{profile?.last_name}}</span></p>
+		</ion-item>
+		<ion-item>
+			<p>Nickname:<span class="text-right">{{profile?.nick_name}}</span></p>
+		</ion-item>
+		<ion-item>
+			<p> Age:<span class="text-right">X</span></p>
+		</ion-item>
+		<ion-item>
+			<p>Gender:<span class="text-right">{{profile?.gender.name}}</span></p>
+		</ion-item>
+		<ion-item>
+			<p>Genotype:<span class="text-right">{{profile?.genotype.name}}</span></p>
+		</ion-item>
+		<ion-item>
+			<p>Blood Group:<span class="text-right">{{profile?.blood_group.name}}</span></p>
+		</ion-item>
+		<ion-item>
+			<p>NHIS No.:<span class="text-right">{{profile?.nhis_number}}</span></p>
 		</ion-item>
 	</ion-list>
+	<p class="section-title" ion-text>Emergency Details</p>
+	<ion-list>
+		<ion-item>
+			<p>Contact Name:<span class="text-right">{{profile?.emergency_name}}</span></p>
+		</ion-item>
+		<ion-item>
+			<p>Emergency Number:<span class="text-right">{{profile?.emergency_number}}</span></p>
+		</ion-item>
+	</ion-list>
+	</div>
 </ion-content>
 
 

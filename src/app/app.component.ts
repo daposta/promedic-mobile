@@ -11,7 +11,7 @@ import {ClientAuthService} from '../services/clientAuthService';
 
 @Component({
   selector: 'nav-menu',
-  templateUrl: 'app.html',
+  templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
