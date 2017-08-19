@@ -11,6 +11,8 @@ import { HttpModule } from '@angular/http';
 import {Globals} from '../shared/api';
 import {ClientAuthService} from '../services/clientAuthService';
 
+import { ResponderAuthService } from '../services/responderAuthService';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -46,7 +48,7 @@ import { Printer, PrintOptions } from '@ionic-native/printer';
     Printer,
      
       // Http,
-    ClientAuthService,
+    ClientAuthService, ResponderAuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
