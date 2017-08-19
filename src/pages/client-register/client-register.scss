@@ -1,19 +1,33 @@
 page-client-register {
     ion-content {
-        background-color: #025973 !important;
+        background-image: linear-gradient(to bottom, #4cd5f3, #25aae1);
     }
     h2 {
         margin-top: 50px !important;
     }
     ion-item {
         margin-bottom: 10px !important;
+        background: transparent !important;
+        border-bottom: 0px !important;
     }
     .item-inner {
         padding-left: 15px;
+        border-bottom: 0px !important;
+    }
+    h2 {
+        padding: 0 30px;
+    }
+    ion-label {
+        color: white !important;
+        font-size: 16px !important;
     }
     .reg-btn {
-        color: #025973;
-        background: white;
-        border: 2px solid #025973;
+        color: #ffffff;
+        background: #25aae1;
+        box-shadow: inherit !important;
+        transition: none !important;
     }
+    ion-input {
+        border-bottom: 1px solid white;
+}
 }

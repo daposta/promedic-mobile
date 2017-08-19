@@ -21,6 +21,7 @@ import { ClientProfile } from   '../client-profile/client-profile';
 export class ClientLogin {
 
   clientLoginForm: FormGroup;
+  loading:any;
   isSubmitted: boolean = false;
   client:Object;
   error_msg ='Kindly fill the fields below';
@@ -29,7 +30,7 @@ export class ClientLogin {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController,
     public formBuilder: FormBuilder, public authSrv: ClientAuthService, public toastCtrl: ToastController,
-    public menu:MenuController, private alertCtrl: AlertController ) {
+    public menu:MenuController, private alertCtrl: AlertController) {
 
       this.clientLoginForm = formBuilder.group(
         {'mobile':['', Validators.required], 
