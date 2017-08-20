@@ -30,7 +30,7 @@
 
 	<div class="login-box" padding>
 
-		<form [formGroup]="responderLoginForm" (ngSubmit)="responderLoginForm.valid && loginResponder(clientLoginForm.value)" novalidate> 
+		<form [formGroup]="responderLoginForm" (ngSubmit)="responderLoginForm.valid && loginResponder(responderLoginForm.value)" novalidate> 
 			<p text-center *ngIf="submitAttempt" style="color: white;">Please fill out all details accurately.</p>
 			<ion-list inset>
 				<ion-item>
@@ -40,7 +40,6 @@
 
 				<ion-item *ngIf="!responderLoginForm.controls.mobile.valid  && (responderLoginForm.controls.mobile.dirty || submitAttempt)">
 					<p style="color: white">Please enter a valid number.</p>
-					<ion-input type="number" formControlName="mobile" required></ion-input>
 				</ion-item>
 
 				<ion-item>
