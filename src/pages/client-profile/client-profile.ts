@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController, ToastController } from 'ionic-angular';
 import { ClientLogin } from   '../client-login/client-login';
 import { ClientProfileEdit } from   '../client-profile-edit/client-profile-edit';
 import {ClientAuthService} from '../../services/clientAuthService';
@@ -19,13 +19,27 @@ export class ClientProfile {
 
   profile: Object;
   constructor(public navCtrl: NavController, public navParams: NavParams,  public authSrv: ClientAuthService,
-  public menu:MenuController ) {
+  public menu:MenuController, public toastCtrl: ToastController, ) {
   	
     if(!localStorage.getItem('token')){
         this.navCtrl.push('ClientLogin');
     };
 
   	 this.getUserProfile();
+     if (!this.profile){
+      // this.navCtrl.push('ClientProfileEdit');
+       let toast = this.toastCtrl.create({
+              message:  'You don\'t have a profile yet ',
+              duration: 3000,
+              position: 'top'
+            });
+
+            toast.onDidDismiss(() => {
+              console.log('Dismissed toast');
+            });
+
+            toast.present();
+     }
 
   }
 
