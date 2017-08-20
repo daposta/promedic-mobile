@@ -13,7 +13,7 @@ import { ClientLogin } from   '../client-login/client-login';
   templateUrl: 'client-profile-edit.html',
 })
 export class ClientProfileEdit {
-
+   profile: Object;
   pages: Array<{title: string, component: any}>;
   constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController) {
 

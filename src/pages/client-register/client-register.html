@@ -21,30 +21,47 @@
 			<ion-col></ion-col>
 			<ion-col></ion-col>
 	</ion-row>
-	    <form>
+	   <form [formGroup]="clientRegForm" (ngSubmit)="clientRegForm.valid && registerClient(clientRegForm.value)" novalidate>
+			<p text-center *ngIf="isSubmitted" style="color: white;">{{error_msg}}</p>
 	    	<ion-list inset>
 
 	    	   <ion-item>
 			    	<ion-label color="primary" stacked>Mobile Number:</ion-label>
-			   		 <ion-input type="text" required></ion-input>
+			   		 <ion-input type="text" formControlName="mobile" required></ion-input>
 			  </ion-item>
+
+			  	<ion-item *ngIf="(clientRegForm.controls.mobile.dirty ||clientRegForm.controls.mobile.touched) && !clientRegForm.controls.mobile.valid">
+						<p padding-left style="color: white;">You must enter a valid phone number</p>
+				
+				</ion-item>
 
 			  <ion-item>
 			    	<ion-label color="primary" stacked>Email:</ion-label>
-			   		 <ion-input type="text"></ion-input>
+			   		 <ion-input type="text" formControlName="email" ></ion-input>
 			  </ion-item>
 
 			  
 
 			  <ion-item>
 			    <ion-label color="primary" stacked>Password:</ion-label>
-			    <ion-input type="password" required></ion-input>
+			    <ion-input type="password" formControlName="password" required></ion-input>
 			  </ion-item>
 
-			    <ion-item>
+			  <ion-item *ngIf="(clientRegForm.controls.password.dirty ||clientRegForm.controls.password.touched) 
+			  && !clientRegForm.controls.password.valid">
+						<p padding-left style="color: white;">You must password</p>
+				
+				</ion-item>
+
+			  <ion-item>
 			    <ion-label color="primary" stacked>Confirm Password:</ion-label>
-			    <ion-input type="password" required></ion-input>
+			    <ion-input type="password" formControlName="confirmPass" required></ion-input>
 			  </ion-item>
+
+			  <ion-item *ngIf="(clientRegForm.controls.confirmPass.dirty ||clientRegForm.controls.confirmPass.touched) && !clientRegForm.controls.confirmPass.valid">
+						<p padding-left style="color: white;">You must confirm password</p>
+				
+				</ion-item>
 
 			</ion-list>
 			<div padding>

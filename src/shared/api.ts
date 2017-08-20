@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 Injectable()
 export class Globals{
-	HOST_URL =    'http://0.0.0.0:8002'; //'http://139.162.213.237:8002'; 
+	HOST_URL =   'http://139.162.213.237:8002';// 'http://0.0.0.0:8002'; // 
 	LOGIN_URL =  this.HOST_URL + '/client/api/api-token-auth/';
     LOGOUT_URL =  this.HOST_URL + '/client/api/logout/';
     REGISTER_URL = this.HOST_URL + '/client/api/register/';

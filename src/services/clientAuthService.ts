@@ -11,6 +11,7 @@ export class ClientAuthService{
 
 	private loginUrl = this.globals.LOGIN_URL;
 	private logoutURL = this.globals.LOGOUT_URL;
+	private registerUrl = this.globals.REGISTER_URL;
 	private userProfile = this.globals.CURRENT_PROFILE_URL;
 	constructor(private globals: Globals, private http: Http){
 
@@ -22,6 +23,23 @@ export class ClientAuthService{
 			let headers = new Headers();
 			headers.append('Content-Type', 'application/json');
 			this.http.post(this.loginUrl, JSON.stringify(credentials), {headers:headers})
+			.subscribe(result => {
+				resolve(result.json());
+			}, (err) => {
+				reject(err);
+			})
+		});
+
+
+	}
+
+
+	register(data){
+
+		return new Promise((resolve, reject) =>{
+			let headers = new Headers();
+			headers.append('Content-Type', 'application/json');
+			this.http.post(this.registerUrl, JSON.stringify(data), {headers:headers})
 			.subscribe(result => {
 				resolve(result.json());
 			}, (err) => {

@@ -91,7 +91,7 @@ export class ClientLogin {
       }, (err) =>{
            this.error_msg = JSON.parse(err['_body']).non_field_errors[0];
             let toast = this.toastCtrl.create({
-              message: 'Log in error',
+              message:  this.error_msg,
               duration: 3000,
               position: 'top'
             });
