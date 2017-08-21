@@ -28,9 +28,9 @@ export class ClientRegister {
     public menu:MenuController, private alertCtrl: AlertController) {
 
   	 this.clientRegForm = formBuilder.group(
-        {'mobile':['', Validators.required], 
-         'email':['',], 
-        'password':['',Validators.required], 
+        {'mobile':['', Validators.compose([Validators.required, Validators.minLength(11), Validators.maxLength(11), Validators.pattern('[0-9 ]*')])], 
+         'email':['',Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')])], 
+        'password':['',Validators.compose([Validators.required, Validators.minLength(8), Validators.pattern('[a-zA-Z ]*')])], 
         'confirmPass':['',Validators.required], 
 
 
