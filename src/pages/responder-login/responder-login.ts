@@ -29,8 +29,8 @@ export class ResponderLogin {
 
   	
   		 this.responderLoginForm = formBuilder.group(
-        {'mobile':['', Validators.compose([Validators.required, Validators.pattern('[0-9 ]*')])], 
-        'password':['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z ]*')])], 
+        {'mobile':['', Validators.compose([Validators.required, Validators.minLength(11), Validators.maxLength(11), Validators.pattern('[0-9 ]*')])], 
+        'password':['', Validators.compose([Validators.required, Validators.minLength(8), Validators.pattern('[a-zA-Z ]*')])], 
 
 
       });

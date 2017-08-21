@@ -21,16 +21,16 @@ export class ClientRegister {
  clientRegForm: FormGroup;
   isSubmitted: boolean = false;
   client:Object;
-  error_msg ='Kindly fill the fields below';
+  error_msg ='Kindly fill the fields';
 
   constructor(public navCtrl: NavController,  public navParams: NavParams, public loadingCtrl: LoadingController,
     public formBuilder: FormBuilder, public authSrv: ClientAuthService, public toastCtrl: ToastController,
     public menu:MenuController, private alertCtrl: AlertController) {
 
   	 this.clientRegForm = formBuilder.group(
-        {'mobile':['', Validators.required], 
-         'email':['',], 
-        'password':['',Validators.required], 
+        {'mobile':['', Validators.compose([Validators.required, Validators.minLength(11), Validators.maxLength(11), Validators.pattern('[0-9 ]*')])], 
+         'email':['',Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')])], 
+        'password':['',Validators.compose([Validators.required, Validators.minLength(8), Validators.pattern('[a-zA-Z ]*')])], 
         'confirmPass':['',Validators.required], 
 
 

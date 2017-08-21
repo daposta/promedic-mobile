@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
-import { ClientProfileEdit } from './client-profile-edit';
+// import { IonicPageModule } from 'ionic-angular';
+// import { ClientProfileEdit } from './client-profile-edit';
 
 @NgModule({
   declarations: [
-    ClientProfileEdit,
+    //ClientProfileEdit,
   ],
   imports: [
-    IonicPageModule.forChild(ClientProfileEdit),
+    //IonicPageModule.forChild(ClientProfileEdit),
   ],
   exports: [
-    ClientProfileEdit
+    //ClientProfileEdit
   ]
 })
 export class ClientProfileEditModule {}

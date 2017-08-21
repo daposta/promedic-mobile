@@ -31,10 +31,10 @@ export class ClientLogin {
   constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController,
     public formBuilder: FormBuilder, public authSrv: ClientAuthService, public toastCtrl: ToastController,
     public menu:MenuController, private alertCtrl: AlertController) {
-
+      
       this.clientLoginForm = formBuilder.group(
-        {'mobile':['', Validators.required], 
-        'password':['',Validators.required], 
+        {'mobile':['', Validators.compose([Validators.required, Validators.minLength(11), Validators.maxLength(11)])], 
+        'password':['',Validators.compose([Validators.required, Validators.pattern('[0-9 ]*'), Validators.minLength(8)])], 
 
 
       });
