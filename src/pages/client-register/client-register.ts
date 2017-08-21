@@ -21,7 +21,7 @@ export class ClientRegister {
  clientRegForm: FormGroup;
   isSubmitted: boolean = false;
   client:Object;
-  error_msg ='Kindly fill the fields below';
+  error_msg ='Kindly fill the fields';
 
   constructor(public navCtrl: NavController,  public navParams: NavParams, public loadingCtrl: LoadingController,
     public formBuilder: FormBuilder, public authSrv: ClientAuthService, public toastCtrl: ToastController,
